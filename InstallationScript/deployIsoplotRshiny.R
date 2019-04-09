@@ -1,5 +1,4 @@
 setwd('/home/fred/')
-
 system('cp IsoplotR/inst/constants.json IsoplotRgui/inst/shiny-examples/myapp/www/js')
 system('rm -rf IsoplotRshiny/R/*')
 system('rsync -av IsoplotR/R/* IsoplotRshiny/R/')
@@ -12,4 +11,4 @@ system("sed -i 's/IsoplotR:://g' IsoplotRshiny/R/server.R")
 system("cat IsoplotRshiny/sources.R IsoplotRshiny/R/server.R > temp;
         mv temp IsoplotRshiny/R/server.R")
 
-system('scp -r IsoplotRshiny pvermees@128.40.78.161:/srv/shiny-server')
+system('scp -r IsoplotRshiny /srv/shiny-server')
