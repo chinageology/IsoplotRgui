@@ -27,12 +27,11 @@ sudo su - -c "R -e \"install.packages('httpuv',repos='http://cran.rstudio.com/')
 sudo su - -c "R -e \"install.packages('mime',repos='http://cran.rstudio.com/')\""
 
 
-
-sudo su - -c "R -e \"devtools::install_github('rstudio/shiny',force=TRUE)\""
-
-
 sudo su - -c "R -e \"install.packages('devtools',repos='http://cran.rstudio.com/')\""
-sudo su - -c "R -e \"install.packages('shiny',repos='http://cran.rstudio.com/')\""
+#sudo su - -c "R -e \"install.packages('shiny',repos='http://cran.rstudio.com/')\""
+#sudo su - -c "R -e \"devtools::install_github('rstudio/shiny',force=TRUE)\""
+sudo su - -c "R -e \"devtools::install_version('shiny',version = '1.2.0', repos = 'http://cran.rstudio.com/')\""
+
 sudo su - -c "R -e \"install.packages('rmarkdown',repos='http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs',force=TRUE)\""
 sudo su - -c "R -e \"devtools::install_github('pvermees/IsoplotR',force=TRUE)\""
