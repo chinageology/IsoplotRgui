@@ -10,7 +10,7 @@ deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
 
 sudo apt update
 sudo apt install r-base r-base-dev
-sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev gdebi git
 
 
 sudo su - -c "R -e \"install.packages('Rcpp',repos='http://cran.rstudio.com/')\""
