@@ -26,8 +26,9 @@
 
 <main>
 
-  <header>
-    <a class="ulcorner" href="http://ucl.ac.uk/~ucfbpve/isoplotr">Home</a>
+  <header>    
+    <a class="url" href="https://www.ucl.ac.uk/~ucfbpve/isoplotr/">官方网站</a>
+    <a class="url" href="https://github.com/chinageology/IsoplotRgui-CN">中文项目 </a>    
     <select id="geochronometer">
       <option id="U-Pb">U-Pb</option>
       <option id="Pb-Pb">Pb-Pb</option>
@@ -44,8 +45,8 @@
       <option id="other">other</option>
     </select>
     <select id="plotdevice"></select>
-    <div id="OPTIONS" class="button">Options</div>
-    <div id="HELP" class="button">Help</div>
+    <div id="OPTIONS" class="button">选项</div>
+    <div id="HELP" class="button">帮助</div>
     <tit>IsoplotR</tit>
   </header>
 
@@ -108,20 +109,20 @@
 </right>
 
 <footer>
-  <div id="DEFAULTS" class="button">Defaults</div>
-  <div id="CLEAR" class="button">Clear</div>
+  <div id="DEFAULTS" class="button">重置设置</div>
+  <div id="CLEAR" class="button">清空数据</div>
   <!-- hacked file upload button -->
   <div class="ui-button" role="button">
-    <input id="OPEN" type="file" class="filestyle" data-buttonText="Open" 
+    <input id="OPEN" type="file" class="filestyle" data-buttonText="OPEN" 
 	   data-input="false" data-badge="false" />
   </div>
-  <div id="SAVE" class="button">Save</div>
-  <div id="PLOT" class="button">PLOT</div>
+  <div id="SAVE" class="button">保存文件</div>
+  <div id="PLOT" class="button">生成投图</div>
   <div id="PLOTTER" hidden class="action-button"></div>
   <div id="RUN" class="button">RUN</div>
   <div id="RUNNER" hidden class="action-button"></div>
-  <a id="PDF" target="_blank" class="button shiny-download-link">PDF</a>
-  <a id="CSV" target="_blank" class="button shiny-download-link">CSV</a>
+  <a id="PDF" target="_blank" class="button shiny-download-link">保存PDF</a>
+  <a id="CSV" target="_blank" class="button shiny-download-link">保存CSV</a>
   <a id="fname" href="" download="IsoplotR.json"></a>
 </footer>
 
