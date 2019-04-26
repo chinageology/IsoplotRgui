@@ -16,6 +16,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 ```Bash
 nano /etc/apt/sources.list
 ```
+
 上面的命令是运行nano编辑器打开源列表文件, 然后在最上面粘贴上下面的代码:
 ```Bash
 # add bionic R3.5
@@ -25,6 +26,11 @@ deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
 以nano为例, Ctrl+O保存, Ctrl+X退出.
 
 退出了之后要更新一下列表:
+```Bash
+install.packages('devtools')
+install.packages('shiny')
+```
+
 
 ```Bash
 sudo apt update
