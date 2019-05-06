@@ -8,16 +8,19 @@
 [http://r-project.org](http://r-project.org)). 而且推荐你安装最新版本的.
 
 这就需要你在终端内运行下面的代码先导入密钥:
+
 ```Bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 ```
 
 导入了上面的密钥之后, 你需要编辑源列表, 用编辑器(下面以nano为例)来添加新的源:
+
 ```Bash
 nano /etc/apt/sources.list
 ```
 
 上面的命令是运行nano编辑器打开源列表文件, 然后在最上面粘贴上下面的代码:
+
 ```Bash
 # add bionic R3.5
 deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
@@ -26,6 +29,7 @@ deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
 以nano为例, Ctrl+O保存, Ctrl+X退出.
 
 退出了之后要更新一下列表:
+
 ```Bash
 install.packages('devtools')
 install.packages('shiny')
@@ -48,8 +52,8 @@ sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev gdeb
 sudo su - -c "R -e \"install.packages('devtools',repos='http://cran.rstudio.com/')\""
 ```
 
-
 安装完了devtool 之后, 就要安装 shiny 1.2.0 版本, 目前最新版本的 shiny 和IsoplotRgui以及IsoplotR的服务器也不兼容,必须用下面这行代码所指定的1.2.0版本才可以
+
 ```Bash
 #sudo su - -c "R -e \"install.packages('shiny',repos='http://cran.rstudio.com/')\""
 #sudo su - -c "R -e \"devtools::install_github('rstudio/shiny',force=TRUE)\""
@@ -58,6 +62,7 @@ sudo su - -c "R -e \"devtools::install_version('shiny',version = '1.2.0', repos 
 ```
 
 上面的两个项目安装完毕之后,就是要安装IsoplotR以及IsoplotRgui了:
+
 ```Bash
 sudo su - -c "R -e \"devtools::install_github('pvermees/IsoplotR',force=TRUE)\""
 sudo su - -c "R -e \"devtools::install_github('pvermees/IsoplotRgui',force=TRUE)\""
@@ -79,7 +84,7 @@ IsoplotR()
 
 ## 更多信息
 
-请参考 [http://isoplotr.london-geochron.com](http://ucl.ac.uk/~ucfbpve/isoplotrlnnn)
+请参考 [http://isoplotr.london-geochron.com](http://ucl.ac.uk/~ucfbpve/isoplotr)
 
 ## 作者
 
