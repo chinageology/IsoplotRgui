@@ -82,6 +82,51 @@ IsoplotR()
 
 [http://isoplotr.london-geochron.com](http://ucl.ac.uk/~ucfbpve/isoplotr)
 
+## 自建服务器
+
+这部分内容参考 [IsoplotRserver](https://github.com/chinageology/IsoplotRserver/blob/master/README_CN.md)。
+
+下面的是更新脚本样例：
+
+```Bash
+# i. 从 Github 更新 IsoplotR :
+sudo su - -c "R -e \"devtools::install_github('pvermees/IsoplotR',force=TRUE)\""
+
+# ii. 从 Github 克隆 IsoplotRgui 到 /tmp:
+cd /tmp
+git clone https://github.com/pvermees/IsoplotRgui
+
+# iii. 把 app 目录复制到 shiny-server 目录下:
+cd IsoplotRgui/inst/shiny-examples/myapp
+sudo cp -R www /srv/shiny-server/IsoplotR
+sudo cp -R server.R /srv/shiny-server/IsoplotR
+
+# iv. 清理然后重启 shiny-server
+sudo rm -rf /tmp/IsoplotRgui
+sudo systemctl restart shiny-server
+```
+
+3. 使用下面的命令来运行 ``IsoplotR.sh`` 这个脚本就可以更新:
+
+```Bash
+cd /srv/shiny-server
+mkdir IsoplotR
+chmod 755 IsoplotR.sh
+./IsoplotR.sh
+```
+
+**IsoplotR** 的服务器就可以通过 http://localhost:3838/IsoplotR 来访问了，注意这里的文件目录和之前的稍有不同，输入地址的时候别输入错了。
+
+4. 使用 **crontab** 可以定时更新，首先在终端输入 ``crontab -e`` ，然后输入:
+
+```
+# Minute    Hour   Day of Month    Month            Day of Week           Command
+# (0-59)   (0-23)    (1-31)    (1-12 or Jan-Dec) (0-6 or Sun-Sat)
+    0        0         *             *                  0        /srv/shiny-server/IsoplotR.sh
+```
+
+这样就可以每周日自动更新到 **GitHub**  上面最新的 **IsoplotR** 和 **IsoplotRgui**。
+
 ## 更多信息
 
 请参考 [http://isoplotr.london-geochron.com](http://ucl.ac.uk/~ucfbpve/isoplotr)
